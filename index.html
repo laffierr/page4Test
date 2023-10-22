@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Testing Framework</title>
+</head>
+<body>
+    <div id="input-container">
+        <h2>输入</h2>
+        <textarea id="input"></textarea>
+        <button onclick="runCode()">运行代码</button>
+    </div>
+    <div id="output-container">
+        <h2>输出</h2>
+        <pre id="output"></pre>
+    </div>
+    <script>
+        function runCode() {
+        const inputElement = document.getElementById('input');
+        const outputElement = document.getElementById('output');
+        const input = inputElement.value.trim();
+
+        try {
+            // 在这里执行用户输入的代码
+            const output = eval(input);
+            outputElement.textContent = output;
+        } catch (error) {
+            outputElement.textContent = '发生错误：' + error.message;
+        }
+    }
+
+    </script>
+</body>
+</html>
